@@ -99,7 +99,8 @@ for (let i = 0; i < buttonOrder.length; i++) {
         } else if (buttonOrder[i] === "=") {
             preoperate(displayNumbers);
             let result = operate(first, operator, second);
-            display.textContent = result;
+            display.textContent = parseFloat(result.toFixed(5)); 
+            // ^ parseFloat removes trailing 0s, tofixed puts max 5 decimal
             displayNumbers = result.toString();
             console.log("Display numbers: " + displayNumbers);
         } else {
